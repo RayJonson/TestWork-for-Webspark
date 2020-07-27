@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+    <!-- Meta -->
+    <title>Empty</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <meta name="twitter:card" content="">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="img/logo.png">
+
+    <meta property="og:url" content="/">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="">
+    <meta property="og:image" content="img/logo.png">
+
+</head>
+<body>
+<div class="preloader">
+    <div class="laoder-frame">
+        <svg class="svg-loader" version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+  <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+    s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+    c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"></path>
+            <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+    C22.32,8.481,24.301,9.057,26.013,10.047z">
+
+            </path>
+  </svg>
+    </div>
+</div>
+<script>
+    $('html').css({"overflow-y": "hidden"});
+    $(window).on('load', function () {
+        setTimeout(function () {
+            $('.preloader').fadeOut('slow', function () {
+            });
+            $('html').css({"overflow-y": "scroll"});
+        }, 500);
+    });
+
+
+</script>
+<style>
+    .preloader {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #fff;
+        z-index: 99999;
+    }
+
+    .laoder-frame {
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .svg-loader {
+        width: 110px;
+        -webkit-animation: svg-loader 1s linear infinite;
+        animation: svg-loader 1s linear infinite;
+    }
+
+    @-webkit-keyframes svg-loader {
+        from {
+            -webkit-transform: rotate(0);
+            transform: rotate(0)
+        }
+        to {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg)
+        }
+    }
+
+    @keyframes svg-loader {
+        from {
+            -ms-transform: rotate(0);
+            -webkit-transform: rotate(0);
+            transform: rotate(0)
+        }
+        to {
+            -ms-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg)
+        }
+    }
+</style>
+
+<header class="header d-flex j-center">
+
+    <a href="#" class="header__logo">
+        <img src="img/logo.png" alt="" title="" class="header__logo-lg">
+        <img src="img/new_logo.png" alt="" title="" class="header__logo-xs dn">
+    </a>
+    <div class="header__inner">
+        <div class="header__caption d-flex a-center">
+            <h1>monblanproject</h1>
+            <span>Start on 17-02-2016</span>
+        </div>
+        <div class="header__stat d-flex a-center">
+            <div>
+                <span><strong>870 </strong>posts</span>
+            </div>
+            <div>
+                <span><strong>11,787 </strong>followers</span>
+            </div>
+            <div>
+                <span><strong>112</strong>following</span>
+            </div>
+        </div>
+        <div class="header__dateSelect d-flex">
+            <span>Date</span>
+            <form class="d-flex a-center">
+                <div class="header__dateSelect-holder">
+                    <input type="text" placeholder="from" name="dates" class="date-picker dates-input">
+                    <div class="close header__dateSelect-button"><img src="img/close.png" alt="" title=""> </div>
+                    <div class="select header__dateSelect-button"><img src="img/dateRange.png" alt="" title=""> </div>
+                </div>
+                <div class="header__dateSelect-holder">
+                    <div class="close header__dateSelect-button"><img src="img/close.png" alt="" title=""> </div>
+                    <div class="select header__dateSelect-button"><img src="img/dateRange.png" alt="" title=""> </div>
+                    <input type="text" placeholder="end date" name="dates" class="date-picker dates-input">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="menu dn">
+        <div class="sandwich">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+        </div>
+    </div>
+</header>
+<div class="catalog">
+    <div class="catalog__caption">
+        <form class="d-flex a-center">
+            <div class="header__dateSelect-holder">
+                <input type="text" placeholder="from" name="dates" class="date-picker dates-input">
+                <div class="close header__dateSelect-button"><img src="img/close.png" alt="" title=""> </div>
+                <div class="select header__dateSelect-button"><img src="img/dateRange.png" alt="" title=""> </div>
+            </div>
+        </form>
+        <div class="catalog__options">
+            <a href="#" class="tiles active " data-attr="tiles"><img src="img/tiles.png"> </a>
+            <a href="#" class="rows "  data-attr="rows"><img src="img/rows.png"></a>
+        </div>
+    </div>
+    <div class="catalog__list" data-attr="tiles">
+        <div class="catalog__item">
+            <a href="#" class="catalog__item-img">
+                <img src="img/img1.png" alt="" title="">
+            </a>
+            <div class="catalog__item-today">
+                <p>Today</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>128</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>31</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-previous">
+                <p>9-08-2016</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>67</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>22</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-uploadDate">
+                <p>Image upload</p>
+                <p>11-04-2016</p>
+
+            </div>
+        </div>
+        <div class="catalog__item">
+            <a href="#" class="catalog__item-img">
+                <img src="img/img2.png" alt="" title="">
+            </a>
+            <div class="catalog__item-today">
+                <p>Today</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>128</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>31</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-previous">
+                <p>9-08-2016</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>67</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>22</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-uploadDate">
+                <p>Image upload</p>
+                <p>11-04-2016</p>
+
+            </div>
+        </div>
+        <div class="catalog__item">
+            <a href="img/img3.png" class="catalog__item-img" data-rel="lightcase">
+                <img src="img/img3.png" alt="" title="">
+            </a>
+            <div class="catalog__item-today">
+                <p>Today</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>128</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>31</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-previous">
+                <p>9-08-2016</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>67</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>22</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-uploadDate">
+                <p>Image upload</p>
+                <p>11-04-2016</p>
+
+            </div>
+        </div>
+        <div class="catalog__item">
+            <a href="#" class="catalog__item-img">
+                <img src="img/img4.png" alt="" title="">
+            </a>
+            <div class="catalog__item-today">
+                <p>Today</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>128</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>31</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-previous">
+                <p>9-08-2016</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>67</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>22</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-uploadDate">
+                <p>Image upload</p>
+                <p>11-04-2016</p>
+
+            </div>
+        </div>
+        <div class="catalog__item">
+            <a href="img/img5.png" class="catalog__item-img" data-rel="lightcase">
+                <img src="img/img5.png" alt="" title="">
+            </a>
+            <div class="catalog__item-today">
+                <p>Today</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>128</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>31</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-previous">
+                <p>9-08-2016</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>67</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>22</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-uploadDate">
+                <p>Image upload</p>
+                <p>11-04-2016</p>
+
+            </div>
+        </div>
+        <div class="catalog__item">
+            <a href="#" class="catalog__item-img">
+                <img src="img/img6.png" alt="" title="">
+            </a>
+            <div class="catalog__item-today">
+                <p>Today</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>128</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>31</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-previous">
+                <p>9-08-2016</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>67</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>22</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-uploadDate">
+                <p>Image upload</p>
+                <p>11-04-2016</p>
+
+            </div>
+        </div>
+        <div class="catalog__item">
+            <a href="#" class="catalog__item-img">
+                <img src="img/img7.png" alt="" title="">
+            </a>
+            <div class="catalog__item-today">
+                <p>Today</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>128</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>31</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-previous">
+                <p>9-08-2016</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>67</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>22</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-uploadDate">
+                <p>Image upload</p>
+                <p>11-04-2016</p>
+
+            </div>
+        </div>
+        <div class="catalog__item">
+            <a href="#" class="catalog__item-img">
+                <img src="img/img8.png" alt="" title="">
+            </a>
+            <div class="catalog__item-today">
+                <p>Today</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>128</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>31</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-previous">
+                <p>9-08-2016</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>67</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>22</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-uploadDate">
+                <p>Image upload</p>
+                <p>11-04-2016</p>
+
+            </div>
+        </div>
+        <div class="catalog__item">
+            <a href="#" class="catalog__item-img">
+                <img src="img/img9.png" alt="" title="">
+            </a>
+            <div class="catalog__item-today">
+                <p>Today</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>128</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>31</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-previous">
+                <p>9-08-2016</p>
+                <div class="d-flex catalog__item-stats">
+                    <div><img src="img/heart.png" alt="" title=""><strong>67</strong></div>
+                    <div><img src="img/comment.png" alt="" title=""><strong>22</strong></div>
+                </div>
+            </div>
+            <div class="catalog__item-uploadDate">
+                <p>Image upload</p>
+                <p>11-04-2016</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="d-flex a-center j-center more-holder">
+        <a href="#" class="more">LOAD MORE</a>
+    </div>
+</div>
+</body>
+<link rel="stylesheet" type="text/css" href="css/lightcase.css">
+<script type="text/javascript" src="js/lightcase.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('a[data-rel^=lightcase]').lightcase();
+    });
+</script>
+<script type="text/javascript" src="js/script.js"></script>
+<link rel="stylesheet" type="text/css" href="css/mystyle.min.css"/>
+</html>
